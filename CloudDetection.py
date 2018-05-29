@@ -9,7 +9,7 @@
 import numpy as np
 import urllib , urllib2
 import ImageProcessing as IPr
-
+import date as dt
 
 
 class cloud:
@@ -28,7 +28,10 @@ class cloud:
 			return 0
 	
 	def Image_Download(self,TimeUTC):
-		link = "https://weather.gc.ca/data/prog/regional/2018052800/2018052800_054_R1_north@america@northwest_I_ASTRO_nt_0"+str(TimeUTC).zfill(2)+".png"
+		
+		date = dt.date()
+		
+		link = "https://weather.gc.ca/data/prog/regional/"+date+"00/"+date+"00_054_R1_north@america@northwest_I_ASTRO_nt_0"+str(TimeUTC).zfill(2)+".png"
 		dowloadPic = "Images/Image"+str(TimeUTC)+".jpg"
 		print TimeUTC
 		try:
